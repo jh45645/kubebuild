@@ -43,10 +43,6 @@ RUN git config --system user.email "nobody@k8s.io" \
 # Fix permissions on gopath
 RUN chmod -R a+rwx $GOPATH
 
-# Make log messages use the right timezone
-ADD localtime /etc/localtime
-RUN chmod a+r /etc/localtime
-
 # Set up rsyncd
 ADD rsyncd.password /
 RUN chmod a+r /rsyncd.password
